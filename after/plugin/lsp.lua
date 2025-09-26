@@ -1,4 +1,4 @@
-vim.lsp.enable({ "luals", "gopls", "pyright" })
+vim.lsp.enable({ "luals", "gopls", "pyright", "kotlin-lsp" })
 
 vim.diagnostic.config({
 	virtual_text = { source = true },
