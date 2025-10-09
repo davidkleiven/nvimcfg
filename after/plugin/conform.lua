@@ -24,7 +24,7 @@ require("conform").setup({
 		ktlint_format = {
 			command = "ktlint",
 			args = { "--stdin" },
-			stdin = tre,
+			stdin = true,
 		},
 	},
 })
