@@ -6,6 +6,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		go = { "gofmt" },
 		json = { "jq" },
+		kotlin = { "ktlint_format" },
 	},
 	formatters = {
 		ruff_format = {
@@ -19,6 +20,11 @@ require("conform").setup({
 				"$FILENAME",
 			},
 			stdin = true,
+		},
+		ktlint_format = {
+			command = "ktlint",
+			args = { "--stdin" },
+			stdin = tre,
 		},
 	},
 })
