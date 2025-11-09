@@ -6,6 +6,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		go = { "gofmt" },
 		json = { "jq" },
+		html = { "prettier" }
 	},
 	formatters = {
 		ruff_format = {
