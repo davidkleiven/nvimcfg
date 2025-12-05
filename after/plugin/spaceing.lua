@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "kotlin", "xml" },
+	pattern = { "kotlin", "xml", "turtle" },
 	callback = function()
 		vim.opt_local.expandtab = true
 		vim.opt_local.shiftwidth = 4
