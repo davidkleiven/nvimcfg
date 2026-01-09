@@ -1,4 +1,4 @@
-vim.lsp.enable({ "luals", "gopls", "pyright", "kotlin-lsp", "ruff" })
+vim.lsp.enable({ "luals", "gopls", "pyright", "kotlin-lsp", "ruff", "typescript-language-server" })
 
 vim.diagnostic.config({
 	virtual_text = { source = true },
