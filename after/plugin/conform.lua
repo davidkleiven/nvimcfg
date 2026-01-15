@@ -6,7 +6,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		go = { "gofmt" },
 		json = { "jq" },
-		html = { "prettier" }
+		html = { "prettier" },
 	},
 	formatters = {
 		ruff_format = {
@@ -14,7 +14,7 @@ require("conform").setup({
 			args = {
 				"-c",
 				[[
-			uvx ruff check --fix --stdin-filename $1 - && uvx ruff format -
+			uvx ruff check --fix --stdin-filename $1 -
 			]],
 				"--",
 				"$FILENAME",
