@@ -3,3 +3,4 @@ require("config.lazy")
 require("custom.ktlint")
 
 vim.o.signcolumn = "yes"
+vim.opt.number = true
