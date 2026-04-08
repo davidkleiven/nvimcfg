@@ -19,7 +19,19 @@ return {
 			"yaml",
 		})
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "go", "python", "kotlin", "markdown", "turtle", "yaml", "typescript", "tsx", "tex", "templ" },
+			pattern = {
+				"go",
+				"javascript",
+				"kotlin",
+				"markdown",
+				"python",
+				"templ",
+				"tex",
+				"tsx",
+				"turtle",
+				"typescript",
+				"yaml",
+			},
 			callback = function()
 				vim.treesitter.start()
 			end,
