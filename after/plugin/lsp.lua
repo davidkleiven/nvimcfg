@@ -1,11 +1,12 @@
 vim.lsp.enable({
-	"luals",
 	"gopls",
-	"pyright",
+	"java-lsp",
 	"kotlin-lsp",
+	"luals",
+	"pyright",
 	"ruff",
-	"typescript-language-server",
 	"texlab",
+	"typescript-language-server",
 	"typos-lsp",
 })
 vim.diagnostic.config({
