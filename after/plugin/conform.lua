@@ -7,6 +7,7 @@ require("conform").setup({
 		go = { "gofmt" },
 		json = { "jq" },
 		html = { "prettier" },
+		sql = { "sqlfmt" },
 	},
 	formatters = {
 		ruff_format = {
@@ -20,6 +21,11 @@ require("conform").setup({
 				"$FILENAME",
 			},
 			stdin = true,
+		},
+		sqlfmt = {
+			command = "sqruff",
+			args = { "fix", "$FILENAME" },
+			stdin = false,
 		},
 	},
 })
