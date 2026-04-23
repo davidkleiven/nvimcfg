@@ -8,6 +8,7 @@ require("conform").setup({
 		json = { "jq" },
 		html = { "prettier" },
 		sql = { "sqlfmt" },
+		dbt_sql = {},
 	},
 	formatters = {
 		ruff_format = {
