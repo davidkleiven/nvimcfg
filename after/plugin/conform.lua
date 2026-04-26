@@ -8,7 +8,6 @@ require("conform").setup({
 		json = { "jq" },
 		html = { "prettier" },
 		sql = { "sqlfmt" },
-		dbt_sql = {},
 	},
 	formatters = {
 		ruff_format = {
@@ -33,6 +32,13 @@ require("conform").setup({
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)
+		local bufnr = args.buf
+		local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+		local text = table.concat(lines, "\n")
+		-- skip formatting for jinja files
+		if text:find("{{") or text:find("{%%") then
+			return
+		end
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
