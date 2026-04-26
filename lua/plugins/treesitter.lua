@@ -7,12 +7,14 @@ return {
 		ts = require("nvim-treesitter")
 		ts.install({
 			"go",
+			"hcl",
 			"javascript",
 			"kotlin",
 			"latex",
 			"markdown",
 			"python",
 			"templ",
+			"terraform",
 			"tsx",
 			"turtle",
 			"typescript",
@@ -26,6 +28,7 @@ return {
 				"markdown",
 				"python",
 				"templ",
+				"terraform",
 				"tex",
 				"tsx",
 				"turtle",
