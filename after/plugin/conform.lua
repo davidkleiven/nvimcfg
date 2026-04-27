@@ -8,6 +8,7 @@ require("conform").setup({
 		json = { "jq" },
 		html = { "prettier" },
 		sql = { "sqlfmt" },
+		terraform = {"terrafmt"},
 	},
 	formatters = {
 		ruff_format = {
@@ -27,6 +28,10 @@ require("conform").setup({
 			args = { "fix", "$FILENAME" },
 			stdin = false,
 		},
+		terrafmt = {
+			command = "terraform",
+			args = { "fmt" },
+		}
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
