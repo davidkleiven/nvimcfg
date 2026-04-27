@@ -5,6 +5,7 @@ vim.lsp.enable({
 	"luals",
 	"pyright",
 	"ruff",
+	"terraform-ls",
 	"texlab",
 	"typescript-language-server",
 	"typos-lsp",
