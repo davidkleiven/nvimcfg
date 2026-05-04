@@ -3,6 +3,7 @@ vim.lsp.enable({
 	"java-lsp",
 	"kotlin-lsp",
 	"luals",
+	"opencode",
 	"pyright",
 	"ruff",
 	"terraform-ls",
