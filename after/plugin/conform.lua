@@ -9,6 +9,7 @@ require("conform").setup({
 		html = { "prettier" },
 		sql = { "sqlfmt" },
 		terraform = {"terrafmt"},
+		typescript = { "prettier" },
 	},
 	formatters = {
 		ruff_format = {
