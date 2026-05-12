@@ -1,4 +1,5 @@
 vim.lsp.enable({
+	"clang",
 	"gopls",
 	"java-lsp",
 	"kotlin-lsp",
