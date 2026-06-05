@@ -27,6 +27,7 @@ require("conform").setup({
 		json = { "jq" },
 		html = { "prettier" },
 		sql = { "sqlfmt" },
+		templ = { "templ" },
 		terraform = { "terrafmt" },
 		typescript = { "prettier" },
 	},
