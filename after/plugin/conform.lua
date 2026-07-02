@@ -24,7 +24,7 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		go = go_formatters,
-		json = { "jq" },
+		json = { "jq2sp" },
 		html = { "prettier" },
 		sql = { "sqlfmt" },
 		templ = { "templ" },
@@ -32,6 +32,12 @@ require("conform").setup({
 		typescript = { "prettier" },
 	},
 	formatters = {
+		jq2sp = {
+			inherit = false,
+			command = "jq",
+			args = { "--indent", "2", "." },
+			stdin = true,
+		},
 		ruff_format = {
 			command = "bash",
 			args = {
@@ -93,4 +99,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
-
