@@ -7,6 +7,7 @@ return {
 		"fredrikaverpil/neotest-golang",
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
+		"marilari88/neotest-vitest",
 	},
 	config = function()
 		local neotest = require("neotest")
@@ -16,6 +17,7 @@ return {
 					dap = { justMyCode = false },
 				}),
 				require("neotest-golang"),
+				require("neotest-vitest"),
 			},
 		})
 		-- Keybindings (set once during setup)
