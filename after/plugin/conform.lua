@@ -30,6 +30,7 @@ require("conform").setup({
 		templ = { "templ" },
 		terraform = { "terrafmt" },
 		typescript = { "prettier" },
+		typescriptreact = { "prettier" },
 	},
 	formatters = {
 		jq2sp = {
@@ -96,6 +97,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		if text:find("{{") or text:find("{%%") then
 			return
 		end
-		require("conform").format({ bufnr = args.buf })
+		require("conform").format({ bufnr = args.buf, async=false })
 	end,
 })
