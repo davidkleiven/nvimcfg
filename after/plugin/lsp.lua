@@ -7,6 +7,7 @@ vim.lsp.enable({
 	"opencode",
 	"pyright",
 	"ruff",
+	"ty-lsp",
 	"terraform-ls",
 	"texlab",
 	"typescript-language-server",

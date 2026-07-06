@@ -10,7 +10,12 @@ end
 return {
 	cmd = { "pyright-langserver", "--stdio" },
 	filetypes = { "python" },
-	root_markers = { "pyproject.toml" },
+	root_dir = function(fname)
+		if vim.fs.root(fname, ".ty") then
+			return nil
+		end
+		return vim.fs.root(fname, "pyproject.toml")
+	end,
 	settings = {
 		python = {
 			analysis = {
