@@ -20,7 +20,7 @@ end
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		python = { "ruff_format" },
+		python = { "ruff_fix", "ruff_format" },
 		rust = { "rustfmt", lsp_format = "fallback" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		go = go_formatters,
@@ -39,17 +39,19 @@ require("conform").setup({
 			args = { "--indent", "2", "." },
 			stdin = true,
 		},
-		ruff_format = {
-			command = "bash",
+		ruff_fix = {
+			command = "uvx",
 			args = {
-				"-c",
-				[[
-			uvx ruff check --fix --stdin-filename $1 -
-			]],
-				"--",
-				"$FILENAME",
+				"ruff", "check", "--fix", "$FILENAME",
 			},
-			stdin = true,
+			stdin=false
+		},
+		ruff_format = {
+			command = "uvx",
+			args = {
+				"ruff", "format", "$FILENAME"
+			},
+			stdin=false,
 		},
 		sqlfmt = {
 			command = "sqruff",
