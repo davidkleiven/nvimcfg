@@ -95,8 +95,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		local bufnr = args.buf
 		local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
 		local text = table.concat(lines, "\n")
-		-- skip formatting for jinja files
-		if text:find("{{") or text:find("{%%") then
+		local filetype = vim.bo[bufnr].filetype
+		-- skip formatting for jinja files that are detected as sql (e.g. DBT projects)
+		if (text:find("{{") or text:find("{%%")) and filetype == "sql" then
 			return
 		end
 		require("conform").format({ bufnr = args.buf, async=false })
