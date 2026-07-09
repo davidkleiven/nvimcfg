@@ -8,6 +8,7 @@ return {
 		ts.install({
 			"go",
 			"hcl",
+			"hurl",
 			"javascript",
 			"kotlin",
 			"latex",
@@ -24,6 +25,7 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = {
 				"go",
+				"hurl",
 				"javascript",
 				"kotlin",
 				"lua",

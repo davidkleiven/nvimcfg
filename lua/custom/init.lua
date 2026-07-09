@@ -5,6 +5,11 @@ vim.filetype.add({
 		tfvars = "terraform",
 	},
 })
+vim.filetype.add({
+	extension = {
+		hurl = "hurl",
+	},
+})
 
 vim.api.nvim_create_user_command("LspRestart", function()
 	local clients = vim.lsp.get_clients()
