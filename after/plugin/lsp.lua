@@ -1,6 +1,7 @@
 vim.lsp.enable({
 	"clang",
 	"gopls",
+	"htmx",
 	"java-lsp",
 	"kotlin-lsp",
 	"luals",
