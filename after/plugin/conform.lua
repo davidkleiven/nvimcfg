@@ -42,16 +42,21 @@ require("conform").setup({
 		ruff_fix = {
 			command = "uvx",
 			args = {
-				"ruff", "check", "--fix", "$FILENAME",
+				"ruff",
+				"check",
+				"--fix",
+				"$FILENAME",
 			},
-			stdin=false
+			stdin = false,
 		},
 		ruff_format = {
 			command = "uvx",
 			args = {
-				"ruff", "format", "$FILENAME"
+				"ruff",
+				"format",
+				"$FILENAME",
 			},
-			stdin=false,
+			stdin = false,
 		},
 		sqlfmt = {
 			command = "sqruff",
@@ -100,6 +105,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		if (text:find("{{") or text:find("{%%")) and filetype == "sql" then
 			return
 		end
-		require("conform").format({ bufnr = args.buf, async=false })
+		require("conform").format({ bufnr = args.buf, async = false })
 	end,
 })
