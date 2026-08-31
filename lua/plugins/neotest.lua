@@ -8,6 +8,7 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"marilari88/neotest-vitest",
+		"nvim-neotest/neotest-plenary",
 	},
 	config = function()
 		local neotest = require("neotest")
@@ -18,6 +19,7 @@ return {
 				}),
 				require("neotest-golang"),
 				require("neotest-vitest"),
+				require("neotest-plenary"),
 			},
 		})
 		-- Keybindings (set once during setup)

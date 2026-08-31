@@ -1,4 +1,11 @@
 require("custom.remap")
+
+local envrun = require("custom.envrun")
+envrun.setup({})
+vim.api.nvim_create_user_command("EnvRun", function()
+	envrun.run()
+end, {})
+
 vim.filetype.add({
 	extension = {
 		tf = "terraform",
