@@ -6,6 +6,7 @@ return {
 	config = function()
 		ts = require("nvim-treesitter")
 		ts.install({
+			"css",
 			"go",
 			"hcl",
 			"hurl",

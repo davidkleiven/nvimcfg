@@ -1,5 +1,6 @@
 vim.lsp.enable({
 	"clang",
+	"css",
 	"gopls",
 	"htmx",
 	"java-lsp",
@@ -53,3 +54,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		})
 	end,
 })
+
+vim.api.nvim_create_user_command("LspInfo", function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local clients = vim.lsp.get_clients({ bufnr = bufnr })
+	if vim.tbl_isempty(clients) then
+		print("No active LSP clients for this buffer.")
+		return
+	end
+
+	print("=== Active LSP Client for Buffer ===")
+	for _, client in ipairs(clients) do
+		print(string.format("- %s (ID: %d)", client.name, client.id))
+	end
+end, {})
