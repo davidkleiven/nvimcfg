@@ -3,6 +3,9 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	opts = {
 		enable_on = { "html", "templ" },
+		style_sheets = {
+			"https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css",
+		},
 	},
 	config = function(_, opts)
 		require("html-css").setup(opts)
