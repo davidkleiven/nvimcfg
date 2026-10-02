@@ -62,6 +62,14 @@ require("conform").setup({
 			command = "sqruff",
 			args = { "fix", "$FILENAME" },
 			stdin = false,
+			prepend_args = function(_, ctx)
+				local config = vim.fs.find(".sqruff", { path = ctx.filename, upward = true })[1]
+				if config then
+					vim.notify("sqruff: using config " .. config, vim.log.levels.INFO)
+					return { "--config", config }
+				end
+				return {}
+			end,
 		},
 		terrafmt = {
 			command = "terraform",
