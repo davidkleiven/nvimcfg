@@ -18,6 +18,12 @@ vim.filetype.add({
 	},
 })
 
+vim.filetype.add({
+	pattern = {
+		[".*%.go%.tmpl"] = "go",
+	},
+})
+
 vim.api.nvim_create_user_command("LspRestart", function()
 	local clients = vim.lsp.get_clients()
 	for _, client in ipairs(clients) do
